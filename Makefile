@@ -3,7 +3,7 @@ HOSTNAME=github.com
 NAMESPACE=robsonscruz
 NAME=avengers
 BINARY=terraform-provider-${NAME}
-VERSION=1.0.0
+VERSION=v1.0.0
 OS=darwin
 OS_ARCH=amd64
 
