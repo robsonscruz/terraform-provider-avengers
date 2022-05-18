@@ -1,5 +1,4 @@
-// provider.go
-package main
+package avengers
 
 import (
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
