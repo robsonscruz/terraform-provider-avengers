@@ -4,7 +4,7 @@ NAMESPACE=robsonscruz
 NAME=avengers
 BINARY=terraform-provider-${NAME}
 VERSION=v1.0.0
-OS=darwin
+OS=linux
 OS_ARCH=amd64
 
 default: install
@@ -31,7 +31,9 @@ release:
 
 install: build
 	mkdir -p ~/.terraform.d/plugins/${HOSTNAME}/${NAMESPACE}/${NAME}/${VERSION}/${OS}_${OS_ARCH}
-	mv ${BINARY} ~/.terraform.d/plugins/${HOSTNAME}/${NAMESPACE}/${NAME}/${VERSION}/${OS}_${OS_ARCH}
+	mkdir -p ~/.local/share/terraform/plugins/${HOSTNAME}/${NAMESPACE}/${NAME}/${VERSION}/${OS}_${OS_ARCH}
+	cp ${BINARY} ~/.terraform.d/plugins/${HOSTNAME}/${NAMESPACE}/${NAME}/${VERSION}/${OS}_${OS_ARCH}
+	mv ${BINARY} ~/.local/share/terraform/plugins/${HOSTNAME}/${NAMESPACE}/${NAME}/${VERSION}/${OS}_${OS_ARCH}
 
 test: 
 	go test -i $(TEST) || exit 1                                                   
